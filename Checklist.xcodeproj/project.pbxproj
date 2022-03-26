@@ -14,6 +14,7 @@
 		3113A63427EE932800FCC2E4 /* ChecklistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113A63327EE932800FCC2E4 /* ChecklistTests.swift */; };
 		3113A63E27EE932800FCC2E4 /* ChecklistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113A63D27EE932800FCC2E4 /* ChecklistUITests.swift */; };
 		3113A64027EE932800FCC2E4 /* ChecklistUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113A63F27EE932800FCC2E4 /* ChecklistUITestsLaunchTests.swift */; };
+		3113A64F27EE964A00FCC2E4 /* CheckItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113A64E27EE964A00FCC2E4 /* CheckItemModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		3113A63927EE932800FCC2E4 /* ChecklistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChecklistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3113A63D27EE932800FCC2E4 /* ChecklistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistUITests.swift; sourceTree = "<group>"; };
 		3113A63F27EE932800FCC2E4 /* ChecklistUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3113A64E27EE964A00FCC2E4 /* CheckItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckItemModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,8 @@
 		3113A62127EE932600FCC2E4 /* Checklist */ = {
 			isa = PBXGroup;
 			children = (
+				3113A64D27EE961F00FCC2E4 /* ViewModels */,
+				3113A64C27EE961300FCC2E4 /* Models */,
 				3113A62227EE932600FCC2E4 /* ChecklistApp.swift */,
 				3113A62427EE932600FCC2E4 /* ContentView.swift */,
 				3113A62627EE932800FCC2E4 /* Assets.xcassets */,
@@ -125,6 +129,21 @@
 				3113A63F27EE932800FCC2E4 /* ChecklistUITestsLaunchTests.swift */,
 			);
 			path = ChecklistUITests;
+			sourceTree = "<group>";
+		};
+		3113A64C27EE961300FCC2E4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3113A64E27EE964A00FCC2E4 /* CheckItemModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3113A64D27EE961F00FCC2E4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3113A62527EE932600FCC2E4 /* ContentView.swift in Sources */,
+				3113A64F27EE964A00FCC2E4 /* CheckItemModel.swift in Sources */,
 				3113A62327EE932600FCC2E4 /* ChecklistApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
