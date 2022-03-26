@@ -4,10 +4,12 @@
 //
 //  Created by zak on 26/3/2022.
 //
+import Foundation
 
-struct CheckItemModel {
-    public var itemName: String
-    public var isChecked: Bool
+struct CheckItemModel: Identifiable {
+    var id = UUID()
+    var itemName: String
+    var isChecked: Bool
     
     init(itemName: String, isChecked: Bool){
         self.itemName = itemName

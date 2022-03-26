@@ -12,9 +12,14 @@ struct ContentView: View {
     
     var body: some View {
         
-        List(checkList.items, id: \.itemName){ item in
-            Text(item.itemName)
-            
+        List(checkList.items, id: \.id){ item in
+            HStack{
+                Text(item.itemName)
+                if (item.isChecked == true){
+                    Spacer()
+                    Image(systemName: "checkmark")
+                }
+            }
         }
         
     }
