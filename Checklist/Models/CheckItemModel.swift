@@ -6,8 +6,8 @@
 //
 
 struct CheckItemModel {
-    var itemName: String
-    var isChecked: Bool
+    public var itemName: String
+    public var isChecked: Bool
     
     init(itemName: String, isChecked: Bool){
         self.itemName = itemName

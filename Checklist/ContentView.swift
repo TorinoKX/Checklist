@@ -8,14 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    let checkList: ChecklistViewModel
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        
+        List(checkList.items, id: \.itemName){ item in
+            Text(item.itemName)
+            
+        }
+        
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(checkList: ChecklistViewModel())
     }
 }
