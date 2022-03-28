@@ -11,17 +11,18 @@ struct ContentView: View {
     let checkList: ChecklistViewModel
     
     var body: some View {
-        
-        List(checkList.items, id: \.id){ item in
-            HStack{
-                Text(item.itemName)
-                if (item.isChecked == true){
-                    Spacer()
-                    Image(systemName: "checkmark")
+        NavigationView{
+            List(checkList.items, id: \.id){ item in
+                HStack{
+                    Text(item.itemName)
+                    if (item.isChecked == true){
+                        Spacer()
+                        Image(systemName: "checkmark")
+                    }
                 }
             }
+            .navigationTitle(/*@START_MENU_TOKEN@*/"Fruits"/*@END_MENU_TOKEN@*/)
         }
-        
     }
 }
 
