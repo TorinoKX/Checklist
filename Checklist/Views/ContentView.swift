@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    let checkList: ChecklistViewModel
-    
-    
+    let checkList = ChecklistViewModel()
     
     var body: some View {
         NavigationView{
@@ -21,6 +19,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(checkList: ChecklistViewModel())
+        ContentView()
     }
 }

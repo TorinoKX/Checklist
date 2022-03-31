@@ -5,7 +5,7 @@
 //  Created by zak on 26/3/2022.
 //
 
-struct ChecklistViewModel {
+class ChecklistViewModel {
     var items: [CheckItemModel] = []
     
     init(){
