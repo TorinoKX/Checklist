@@ -6,7 +6,7 @@
 //
 import Foundation
 
-struct CheckItemModel: Identifiable {
+class CheckItemModel: Identifiable {
     var id = UUID()
     var itemName: String
     var isChecked: Bool

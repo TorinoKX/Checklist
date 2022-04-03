@@ -4,15 +4,15 @@
 //
 //  Created by zak on 26/3/2022.
 //
+import Foundation
 
-class ChecklistViewModel {
-    var items: [CheckItemModel] = []
+class ChecklistViewModel: Identifiable {
+    var id = UUID()
+    var items: [CheckItemModel]
+    var name: String
     
-    init(){
-        items.append(CheckItemModel(itemName: "Apples", isChecked: true))
-        items.append(CheckItemModel(itemName: "Beans", isChecked: false))
-        items.append(CheckItemModel(itemName: "Lemons", isChecked: false))
-        items.append(CheckItemModel(itemName: "Avocados", isChecked: true))
-        items.append(CheckItemModel(itemName: "Peaches", isChecked: true))
+    init(items: [CheckItemModel] = [], name: String = "Checklist"){
+        self.items = items;
+        self.name = name
     }
 }

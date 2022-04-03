@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-func ChecklistView(checkList:ChecklistViewModel) -> some View {
-    
+struct ChecklistView: View {
+    var checkList: ChecklistViewModel
+    var body: some View{
     return List(checkList.items, id: \.id){ item in
         HStack{
             Text(item.itemName)
@@ -18,5 +19,6 @@ func ChecklistView(checkList:ChecklistViewModel) -> some View {
             }
         }
     }
-    .navigationTitle(/*@START_MENU_TOKEN@*/"Fruits"/*@END_MENU_TOKEN@*/)
+    .navigationTitle(checkList.name)
+    }
 }

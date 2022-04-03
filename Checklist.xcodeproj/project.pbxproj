@@ -17,6 +17,8 @@
 		3113A64F27EE964A00FCC2E4 /* CheckItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113A64E27EE964A00FCC2E4 /* CheckItemModel.swift */; };
 		3113A65127EE979900FCC2E4 /* ChecklistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113A65027EE979900FCC2E4 /* ChecklistViewModel.swift */; };
 		3113A65427F17C4900FCC2E4 /* ChecklistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113A65327F17C4900FCC2E4 /* ChecklistView.swift */; };
+		3113A65627F698A500FCC2E4 /* MasterlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113A65527F698A500FCC2E4 /* MasterlistView.swift */; };
+		3113A71427F9C8EB00FCC2E4 /* MasterlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113A71327F9C8EB00FCC2E4 /* MasterlistViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		3113A64E27EE964A00FCC2E4 /* CheckItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckItemModel.swift; sourceTree = "<group>"; };
 		3113A65027EE979900FCC2E4 /* ChecklistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistViewModel.swift; sourceTree = "<group>"; };
 		3113A65327F17C4900FCC2E4 /* ChecklistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistView.swift; sourceTree = "<group>"; };
+		3113A65527F698A500FCC2E4 /* MasterlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterlistView.swift; sourceTree = "<group>"; };
+		3113A71327F9C8EB00FCC2E4 /* MasterlistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterlistViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				3113A65027EE979900FCC2E4 /* ChecklistViewModel.swift */,
+				3113A71327F9C8EB00FCC2E4 /* MasterlistViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 			children = (
 				3113A62427EE932600FCC2E4 /* ContentView.swift */,
 				3113A65327F17C4900FCC2E4 /* ChecklistView.swift */,
+				3113A65527F698A500FCC2E4 /* MasterlistView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -292,8 +298,10 @@
 			files = (
 				3113A62527EE932600FCC2E4 /* ContentView.swift in Sources */,
 				3113A65427F17C4900FCC2E4 /* ChecklistView.swift in Sources */,
+				3113A65627F698A500FCC2E4 /* MasterlistView.swift in Sources */,
 				3113A65127EE979900FCC2E4 /* ChecklistViewModel.swift in Sources */,
 				3113A64F27EE964A00FCC2E4 /* CheckItemModel.swift in Sources */,
+				3113A71427F9C8EB00FCC2E4 /* MasterlistViewModel.swift in Sources */,
 				3113A62327EE932600FCC2E4 /* ChecklistApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
