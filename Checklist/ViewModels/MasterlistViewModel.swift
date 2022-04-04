@@ -7,6 +7,10 @@
 
 import Foundation
 
-class MasterlistViewModel {
-    var items: [ChecklistViewModel] = [ChecklistViewModel()]
+class MasterlistViewModel: ObservableObject {
+    var items: [ChecklistViewModel]
+    
+    init( items: [ChecklistViewModel] = [ChecklistViewModel()]){
+        self.items = items
+    }
 }

@@ -6,13 +6,13 @@
 //
 import Foundation
 
-class ChecklistViewModel: Identifiable {
+class ChecklistViewModel: Identifiable, ObservableObject {
     var id = UUID()
     var items: [CheckItemModel]
     var name: String
     
     init(items: [CheckItemModel] = [], name: String = "Checklist"){
-        self.items = items;
+        self.items = items
         self.name = name
     }
 }
