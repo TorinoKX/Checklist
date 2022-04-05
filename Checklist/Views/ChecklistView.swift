@@ -8,17 +8,23 @@
 import SwiftUI
 
 struct ChecklistView: View {
-    var checkList: ChecklistViewModel
+    @ObservedObject var checkList: ChecklistViewModel
+    @Environment(\.editMode) var editMode
+    @State var title = ""
     var body: some View{
-    return List(checkList.items, id: \.id){ item in
-        HStack{
-            Text(item.itemName)
-            if (item.isChecked == true){
-                Spacer()
-                Image(systemName: "checkmark")
+        List{
+            ForEach(checkList.items, id: \.id){ item in
+                HStack{
+                    Text(item.itemName)
+                    if (item.isChecked == true){
+                        Spacer()
+                        Image(systemName: "checkmark")
+                    }
+                }
+            }.onDelete { itemNumbers in
+                checkList.remove(atOffsets: itemNumbers)
             }
         }
-    }
-    .navigationTitle(checkList.name)
+        .navigationTitle(checkList.name)
     }
 }
