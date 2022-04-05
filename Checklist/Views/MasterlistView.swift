@@ -8,23 +8,20 @@
 import SwiftUI
 
 struct MasterlistView: View {
-    @ObservedObject var masterList: MasterlistViewModel = MasterlistViewModel()
+    @ObservedObject var masterList: MasterlistViewModel
     var body: some View {
         List{
             ForEach( masterList.items, id: \.id){ item in
                 NavigationLink(item.name, destination: ChecklistView(checkList: item))
-            }.onDelete { offsets in
-                masterList.items.remove(atOffsets: offsets)
+            }.onDelete { itemNumbers in
+                masterList.remove(atOffsets: itemNumbers)
             }
         }
-        .navigationBarItems(leading: Button(action: {
-            masterList.items.append(ChecklistViewModel())
-                    }) {
-                        Image(systemName: "plus")
-                    })
         .navigationTitle("Checklists")
-        .toolbar {
-            EditButton()
-        }
+        .navigationBarItems(leading: EditButton(),trailing: Button(action: {
+            masterList.addElement(item: ChecklistViewModel())
+        }) {
+            Image(systemName: "plus")
+        })
     }
 }

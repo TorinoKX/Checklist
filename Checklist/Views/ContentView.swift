@@ -8,15 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var masterList: MasterlistViewModel = MasterlistViewModel(Masterlist: MasterlistModel())
     var body: some View {
         NavigationView{
-            MasterlistView();
+            MasterlistView(masterList: masterList);
         }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
