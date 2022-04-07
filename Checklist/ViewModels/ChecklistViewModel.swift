@@ -7,20 +7,22 @@
 import Foundation
 
 class ChecklistViewModel: Identifiable, ObservableObject {
-    var id = UUID()
-    var name: String
     @Published var checkList: ChecklistModel
-    var items: [CheckItemModel] {
+    var id = UUID()
+    var items: [CheckItemViewModel] {
         get { checkList.items }
         set { checkList.items = newValue }
     }
+    var name: String {
+        get { checkList.name }
+        set { checkList.name = newValue }
+    }
     
-    init(name: String = "Checklist", checkList: ChecklistModel = ChecklistModel()){
-        self.name = name
+    init(checkList: ChecklistModel = ChecklistModel()){
         self.checkList = checkList
     }
     
-    func addElement(item: CheckItemModel) {
+    func addElement(item: CheckItemViewModel) {
         checkList.items.append(item)
     }
     

@@ -6,12 +6,11 @@
 //
 import Foundation
 
-class CheckItemModel: Identifiable {
-    var id = UUID()
-    var itemName: String
-    var isChecked: Bool
+class CheckItemModel: Identifiable, ObservableObject {
+    @Published var itemName: String
+    @Published var isChecked: Bool
     
-    init(itemName: String, isChecked: Bool){
+    init(itemName: String = "", isChecked: Bool = false){
         self.itemName = itemName
         self.isChecked = isChecked
     }

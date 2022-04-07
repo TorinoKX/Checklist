@@ -11,20 +11,33 @@ struct ChecklistView: View {
     @ObservedObject var checkList: ChecklistViewModel
     @Environment(\.editMode) var editMode
     @State var title = ""
-    var body: some View{
+    
+    var body: some View {
         List{
-            ForEach(checkList.items, id: \.id){ item in
+            ForEach( checkList.items, id: \.id){ item in
                 HStack{
-                    Text(item.itemName)
-                    if (item.isChecked == true){
-                        Spacer()
-                        Image(systemName: "checkmark")
-                    }
+                    Text(item.name)
+                    Spacer()
+                    Image(systemName: item.isChecked ? "checkmark" : "")
+                }.onTapGesture {
+                    item.toggleCheck()
                 }
             }.onDelete { itemNumbers in
-                checkList.remove(atOffsets: itemNumbers)
+                checkList.items.remove(atOffsets: itemNumbers)
+            }
+            if editMode?.wrappedValue == .active {
+                HStack {
+                    Image(systemName: "plus.circle").foregroundColor(.green)
+                    TextField("Enter new entry name", text: $title) {
+                        @ObservedObject var newItem = CheckItemViewModel()
+                        newItem.name = title
+                        checkList.addElement(item: newItem)
+                        title = ""
+                    }
+                }
             }
         }
         .navigationTitle(checkList.name)
+        .navigationBarItems(trailing: EditButton())
     }
 }

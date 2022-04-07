@@ -8,9 +8,11 @@
 import Foundation
 
 class ChecklistModel {
-    var items: [CheckItemModel]
+    var items: [CheckItemViewModel]
+    var name: String
     
-    init(items: [CheckItemModel] = []){
+    init(items: [CheckItemViewModel] = [], name: String = "CheckList"){
         self.items = items
+        self.name = name
     }
 }
