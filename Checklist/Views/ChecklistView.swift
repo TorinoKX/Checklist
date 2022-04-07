@@ -6,38 +6,48 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct ChecklistView: View {
-    @ObservedObject var checkList: ChecklistViewModel
+    @StateObject var checkList: ChecklistViewModel
     @Environment(\.editMode) var editMode
     @State var title = ""
     
     var body: some View {
-        List{
-            ForEach( checkList.items, id: \.id){ item in
-                Button(action: {checkList.toggleItem(for: item)}){
-                    HStack{
-                        Text(item.name)
-                        Spacer()
-                        Image(systemName: item.isChecked ? "checkmark" : "")
-                    }.foregroundColor(Color.black)
-                }
-            }.onDelete { itemNumbers in
-                checkList.items.remove(atOffsets: itemNumbers)
-            }
+        VStack{
             if editMode?.wrappedValue == .active {
                 HStack {
-                    Image(systemName: "plus.circle").foregroundColor(.green)
-                    TextField("Enter new entry name", text: $title) {
-                        @ObservedObject var newItem = CheckItemViewModel()
-                        newItem.name = title
-                        checkList.addElement(item: newItem)
-                        title = ""
+                    Image(systemName: "pencil.circle").foregroundColor(.green)
+                    TextField(checkList.name, text: $checkList.name)
+                }
+                .padding()
+            }
+            List{
+                ForEach( checkList.items, id: \.id){ item in
+                    Button(action: {checkList.toggleItem(for: item)}){
+                        HStack{
+                            Text(item.name)
+                            Spacer()
+                            Image(systemName: item.isChecked ? "checkmark" : "")
+                        }.foregroundColor(Color.black)
+                    }
+                }.onDelete { itemNumbers in
+                    checkList.items.remove(atOffsets: itemNumbers)
+                }
+                if editMode?.wrappedValue == .active {
+                    HStack {
+                        Image(systemName: "plus.circle").foregroundColor(.green)
+                        TextField("Enter new entry name", text: $title) {
+                            @ObservedObject var newItem = CheckItemViewModel()
+                            newItem.name = title
+                            checkList.addElement(item: newItem)
+                            title = ""
+                        }
                     }
                 }
             }
+            .navigationTitle(editMode?.wrappedValue == .active ? "" : checkList.name)
+            .navigationBarItems(trailing: EditButton())
         }
-        .navigationTitle(checkList.name)
-        .navigationBarItems(trailing: EditButton())
     }
 }

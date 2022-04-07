@@ -18,7 +18,7 @@ class ChecklistViewModel: Identifiable, ObservableObject {
         set { checkList.name = newValue }
     }
     
-    init(checkList: ChecklistModel = ChecklistModel()){
+    init(checkList: ChecklistModel){
         self.checkList = checkList
     }
     

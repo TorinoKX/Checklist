@@ -7,11 +7,11 @@
 
 import Foundation
 
-class ChecklistModel {
+struct ChecklistModel {
     var items: [CheckItemViewModel]
     var name: String
     
-    init(items: [CheckItemViewModel] = [], name: String = "CheckList"){
+    init(items: [CheckItemViewModel] = [], name: String){
         self.items = items
         self.name = name
     }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var masterList: MasterlistViewModel = MasterlistViewModel(Masterlist: MasterlistModel())
+    @ObservedObject var masterList: MasterlistViewModel = MasterlistViewModel()
     var body: some View {
         NavigationView{
             MasterlistView(masterList: masterList);

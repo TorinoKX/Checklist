@@ -8,22 +8,17 @@
 import Foundation
 
 class MasterlistViewModel: ObservableObject {
+    @Published var items: [ChecklistViewModel]
     
-    @Published var Masterlist: MasterlistModel
-    var items: [ChecklistViewModel] {
-        get { Masterlist.items }
-        set { Masterlist.items = newValue }
-    }
-    
-    init( Masterlist: MasterlistModel ){
-        self.Masterlist = Masterlist
+    init( items: [ChecklistViewModel] = [ChecklistViewModel(checkList: ChecklistModel(name: "Checklist"))]){
+        self.items = items
     }
     
     func addElement(item: ChecklistViewModel) {
-        Masterlist.items.append(item)
+        items.append(item)
     }
     
     func remove(atOffsets indices: IndexSet) {
-        Masterlist.items.remove(atOffsets: indices)
+        items.remove(atOffsets: indices)
     }
 }
