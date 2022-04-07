@@ -15,12 +15,12 @@ struct ChecklistView: View {
     var body: some View {
         List{
             ForEach( checkList.items, id: \.id){ item in
-                HStack{
-                    Text(item.name)
-                    Spacer()
-                    Image(systemName: item.isChecked ? "checkmark" : "")
-                }.onTapGesture {
-                    item.toggleCheck()
+                Button(action: {checkList.toggleItem(for: item)}){
+                    HStack{
+                        Text(item.name)
+                        Spacer()
+                        Image(systemName: item.isChecked ? "checkmark" : "")
+                    }.foregroundColor(Color.black)
                 }
             }.onDelete { itemNumbers in
                 checkList.items.remove(atOffsets: itemNumbers)

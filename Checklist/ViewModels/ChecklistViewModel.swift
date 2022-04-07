@@ -29,4 +29,9 @@ class ChecklistViewModel: Identifiable, ObservableObject {
     func remove(atOffsets indices: IndexSet) {
         checkList.items.remove(atOffsets: indices)
     }
+    
+    func toggleItem(for checkItem: CheckItemViewModel){
+        objectWillChange.send()
+        checkItem.isChecked.toggle()
+    }
 }

@@ -22,8 +22,4 @@ class CheckItemViewModel: ObservableObject {
     init (CheckItem: CheckItemModel = CheckItemModel()){
         self.CheckItem = CheckItem
     }
-    
-    func toggleCheck(){
-        CheckItem.isChecked.toggle()
-    }
 }
