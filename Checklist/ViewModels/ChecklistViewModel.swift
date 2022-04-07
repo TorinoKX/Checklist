@@ -5,6 +5,7 @@
 //  Created by zak on 26/3/2022.
 //
 import Foundation
+import SwiftUI
 
 class ChecklistViewModel: Identifiable, ObservableObject {
     @Published var checkList: ChecklistModel
@@ -34,4 +35,5 @@ class ChecklistViewModel: Identifiable, ObservableObject {
         objectWillChange.send()
         checkItem.isChecked.toggle()
     }
+    
 }

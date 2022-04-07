@@ -12,6 +12,7 @@ struct ChecklistView: View {
     @StateObject var checkList: ChecklistViewModel
     @Environment(\.editMode) var editMode
     @State var title = ""
+    @State var toggled = false
     
     var body: some View {
         VStack{
@@ -19,12 +20,14 @@ struct ChecklistView: View {
                 HStack {
                     Image(systemName: "pencil.circle").foregroundColor(.green)
                     TextField(checkList.name, text: $checkList.name)
+                        .font(Font.largeTitle.weight(.bold))
+                        
                 }
                 .padding()
             }
             List{
                 ForEach( checkList.items, id: \.id){ item in
-                    Button(action: {checkList.toggleItem(for: item)}){
+                    Button(action: {checkList.toggleItem(for: item); toggled=false}){
                         HStack{
                             Text(item.name)
                             Spacer()
@@ -47,7 +50,23 @@ struct ChecklistView: View {
                 }
             }
             .navigationTitle(editMode?.wrappedValue == .active ? "" : checkList.name)
-            .navigationBarItems(trailing: EditButton())
+            .navigationBarItems(trailing: HStack {
+                Button(action: {
+                    if toggled == false{
+                        for item in checkList.checkList.items {
+                            item.resetChecked()
+                        }
+                    }else {
+                        for item in checkList.checkList.items {
+                            item.undoReset()
+                        }
+                    }
+                    toggled.toggle()
+                }) {
+                    Text(editMode?.wrappedValue == .active ? toggled == true ? "Undo Reset" : "Reset" : "")
+                }.foregroundColor(toggled == true ? Color.red : Color.green)
+                EditButton()
+            })
         }
     }
 }
