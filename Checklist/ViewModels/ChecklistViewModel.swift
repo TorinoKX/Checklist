@@ -9,7 +9,7 @@ import SwiftUI
 
 class ChecklistViewModel: Identifiable, ObservableObject {
     @Published var checkList: ChecklistModel
-    var toggled = false
+    @Published var toggled = false
     var id = UUID()
     var items: [CheckItemViewModel] {
         get { checkList.items }
