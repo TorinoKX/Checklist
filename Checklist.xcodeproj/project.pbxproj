@@ -20,7 +20,6 @@
 		3113A65627F698A500FCC2E4 /* MasterlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113A65527F698A500FCC2E4 /* MasterlistView.swift */; };
 		3113A71427F9C8EB00FCC2E4 /* MasterlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113A71327F9C8EB00FCC2E4 /* MasterlistViewModel.swift */; };
 		3113A71827FC51FE00FCC2E4 /* ChecklistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113A71727FC51FE00FCC2E4 /* ChecklistModel.swift */; };
-		3113A71A27FE569D00FCC2E4 /* CheckItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113A71927FE569D00FCC2E4 /* CheckItemViewModel.swift */; };
 		3113A71C27FE8D1B00FCC2E4 /* ChecklistRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113A71B27FE8D1B00FCC2E4 /* ChecklistRowView.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,7 +57,6 @@
 		3113A65527F698A500FCC2E4 /* MasterlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterlistView.swift; sourceTree = "<group>"; };
 		3113A71327F9C8EB00FCC2E4 /* MasterlistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterlistViewModel.swift; sourceTree = "<group>"; };
 		3113A71727FC51FE00FCC2E4 /* ChecklistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistModel.swift; sourceTree = "<group>"; };
-		3113A71927FE569D00FCC2E4 /* CheckItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckItemViewModel.swift; sourceTree = "<group>"; };
 		3113A71B27FE8D1B00FCC2E4 /* ChecklistRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,7 +157,6 @@
 			children = (
 				3113A65027EE979900FCC2E4 /* ChecklistViewModel.swift */,
 				3113A71327F9C8EB00FCC2E4 /* MasterlistViewModel.swift */,
-				3113A71927FE569D00FCC2E4 /* CheckItemViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -308,7 +305,6 @@
 				3113A62527EE932600FCC2E4 /* ContentView.swift in Sources */,
 				3113A71827FC51FE00FCC2E4 /* ChecklistModel.swift in Sources */,
 				3113A65427F17C4900FCC2E4 /* ChecklistView.swift in Sources */,
-				3113A71A27FE569D00FCC2E4 /* CheckItemViewModel.swift in Sources */,
 				3113A65627F698A500FCC2E4 /* MasterlistView.swift in Sources */,
 				3113A65127EE979900FCC2E4 /* ChecklistViewModel.swift in Sources */,
 				3113A64F27EE964A00FCC2E4 /* CheckItemModel.swift in Sources */,

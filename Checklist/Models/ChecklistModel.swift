@@ -8,10 +8,10 @@
 import Foundation
 
 struct ChecklistModel {
-    var items: [CheckItemViewModel]
+    var items: [CheckItemModel]
     var name: String
     
-    init(items: [CheckItemViewModel] = [], name: String){
+    init(items: [CheckItemModel] = [], name: String){
         self.items = items
         self.name = name
     }

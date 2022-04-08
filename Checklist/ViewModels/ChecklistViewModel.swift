@@ -11,7 +11,7 @@ class ChecklistViewModel: Identifiable, ObservableObject {
     @Published var checkList: ChecklistModel
     @Published var toggled = false
     var id = UUID()
-    var items: [CheckItemViewModel] {
+    var items: [CheckItemModel] {
         get { checkList.items }
         set { checkList.items = newValue }
     }
@@ -24,7 +24,7 @@ class ChecklistViewModel: Identifiable, ObservableObject {
         self.checkList = checkList
     }
     
-    func addElement(item: CheckItemViewModel) {
+    func addElement(item: CheckItemModel) {
         checkList.items.append(item)
     }
     
@@ -32,7 +32,7 @@ class ChecklistViewModel: Identifiable, ObservableObject {
         checkList.items.remove(atOffsets: indices)
     }
     
-    func toggleItem(for checkItem: CheckItemViewModel){
+    func toggleItem(for checkItem: CheckItemModel){
         objectWillChange.send()
         checkItem.isChecked.toggle()
     }
@@ -40,14 +40,15 @@ class ChecklistViewModel: Identifiable, ObservableObject {
     func toggleUndo(){
         if toggled == false{
             for item in checkList.items {
-                item.resetChecked()
+                item.oldChecked = item.isChecked
+                item.isChecked = false
             }
         }else {
             for item in checkList.items {
-                item.undoReset()
+                item.isChecked = item.oldChecked
+                item.oldChecked = false
             }
         }
         toggled.toggle()
     }
-    
 }

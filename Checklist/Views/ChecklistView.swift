@@ -40,7 +40,7 @@ struct ChecklistView: View {
                     HStack {
                         Image(systemName: "plus.circle").foregroundColor(.green)
                         TextField("Enter new entry name", text: $title) {
-                            @ObservedObject var newItem = CheckItemViewModel()
+                            let newItem = CheckItemModel()
                             newItem.name = title
                             checkList.addElement(item: newItem)
                             title = ""
