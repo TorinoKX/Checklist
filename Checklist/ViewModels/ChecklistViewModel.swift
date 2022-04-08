@@ -9,6 +9,7 @@ import SwiftUI
 
 class ChecklistViewModel: Identifiable, ObservableObject {
     @Published var checkList: ChecklistModel
+    var toggled = false
     var id = UUID()
     var items: [CheckItemViewModel] {
         get { checkList.items }
@@ -34,6 +35,19 @@ class ChecklistViewModel: Identifiable, ObservableObject {
     func toggleItem(for checkItem: CheckItemViewModel){
         objectWillChange.send()
         checkItem.isChecked.toggle()
+    }
+    
+    func toggleUndo(){
+        if toggled == false{
+            for item in checkList.items {
+                item.resetChecked()
+            }
+        }else {
+            for item in checkList.items {
+                item.undoReset()
+            }
+        }
+        toggled.toggle()
     }
     
 }
