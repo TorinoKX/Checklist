@@ -155,8 +155,8 @@
 		3113A64D27EE961F00FCC2E4 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				3113A65027EE979900FCC2E4 /* ChecklistViewModel.swift */,
 				3113A71327F9C8EB00FCC2E4 /* MasterlistViewModel.swift */,
+				3113A65027EE979900FCC2E4 /* ChecklistViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -165,9 +165,9 @@
 			isa = PBXGroup;
 			children = (
 				3113A62427EE932600FCC2E4 /* ContentView.swift */,
-				3113A65327F17C4900FCC2E4 /* ChecklistView.swift */,
 				3113A65527F698A500FCC2E4 /* MasterlistView.swift */,
 				3113A71B27FE8D1B00FCC2E4 /* ChecklistRowView.swift */,
+				3113A65327F17C4900FCC2E4 /* ChecklistView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
