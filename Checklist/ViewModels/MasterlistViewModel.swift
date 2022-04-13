@@ -25,4 +25,8 @@ class MasterlistViewModel: ObservableObject {
     func remove(atOffsets indices: IndexSet) {
         items.remove(atOffsets: indices)
     }
+    
+    func move(from source: IndexSet, to destination: Int) {
+            items.move(fromOffsets: source, toOffset: destination)
+        }
 }

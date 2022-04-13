@@ -17,6 +17,7 @@ struct MasterlistView: View {
             }.onDelete { itemNumbers in
                 masterList.remove(atOffsets: itemNumbers)
             }
+            .onMove(perform: masterList.move)
         }
         .navigationTitle("Checklists")
         .navigationBarItems(leading: EditButton(),trailing: Button(action: {

@@ -41,6 +41,7 @@ struct ChecklistView: View {
                 }.onDelete { itemNumbers in
                     checkList.items.remove(atOffsets: itemNumbers)
                 }
+                .onMove(perform: checkList.move)
                 //if view is in edit mode, show a text entry field at the bottom of the list to create a new checklist item
                 if editMode?.wrappedValue == .active {
                     HStack {
