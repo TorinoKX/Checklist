@@ -35,7 +35,9 @@ struct ChecklistView: View {
                             Text(item.name)
                             Spacer()
                             //check if checked, show a checkmark image if it is
-                            Image(systemName: item.isChecked ? "checkmark" : "")
+                            if item.isChecked == true {
+                                Image(systemName: "checkmark")
+                            }
                         }.foregroundColor(Color.black)
                     }
                 }.onDelete { itemNumbers in
