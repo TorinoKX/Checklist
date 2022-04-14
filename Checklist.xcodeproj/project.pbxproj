@@ -18,7 +18,6 @@
 		3113A65127EE979900FCC2E4 /* ChecklistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113A65027EE979900FCC2E4 /* ChecklistViewModel.swift */; };
 		3113A65427F17C4900FCC2E4 /* ChecklistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113A65327F17C4900FCC2E4 /* ChecklistView.swift */; };
 		3113A65627F698A500FCC2E4 /* MasterlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113A65527F698A500FCC2E4 /* MasterlistView.swift */; };
-		3113A71427F9C8EB00FCC2E4 /* MasterlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113A71327F9C8EB00FCC2E4 /* MasterlistViewModel.swift */; };
 		3113A71827FC51FE00FCC2E4 /* ChecklistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113A71727FC51FE00FCC2E4 /* ChecklistModel.swift */; };
 		3113A71C27FE8D1B00FCC2E4 /* ChecklistRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113A71B27FE8D1B00FCC2E4 /* ChecklistRowView.swift */; };
 /* End PBXBuildFile section */
@@ -55,7 +54,6 @@
 		3113A65027EE979900FCC2E4 /* ChecklistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistViewModel.swift; sourceTree = "<group>"; };
 		3113A65327F17C4900FCC2E4 /* ChecklistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistView.swift; sourceTree = "<group>"; };
 		3113A65527F698A500FCC2E4 /* MasterlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterlistView.swift; sourceTree = "<group>"; };
-		3113A71327F9C8EB00FCC2E4 /* MasterlistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterlistViewModel.swift; sourceTree = "<group>"; };
 		3113A71727FC51FE00FCC2E4 /* ChecklistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistModel.swift; sourceTree = "<group>"; };
 		3113A71B27FE8D1B00FCC2E4 /* ChecklistRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,7 +153,6 @@
 		3113A64D27EE961F00FCC2E4 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				3113A71327F9C8EB00FCC2E4 /* MasterlistViewModel.swift */,
 				3113A65027EE979900FCC2E4 /* ChecklistViewModel.swift */,
 			);
 			path = ViewModels;
@@ -308,7 +305,6 @@
 				3113A65627F698A500FCC2E4 /* MasterlistView.swift in Sources */,
 				3113A65127EE979900FCC2E4 /* ChecklistViewModel.swift in Sources */,
 				3113A64F27EE964A00FCC2E4 /* CheckItemModel.swift in Sources */,
-				3113A71427F9C8EB00FCC2E4 /* MasterlistViewModel.swift in Sources */,
 				3113A71C27FE8D1B00FCC2E4 /* ChecklistRowView.swift in Sources */,
 				3113A62327EE932600FCC2E4 /* ChecklistApp.swift in Sources */,
 			);
@@ -398,7 +394,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -453,7 +449,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -480,7 +476,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -511,7 +507,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
