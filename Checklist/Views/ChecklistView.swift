@@ -12,6 +12,8 @@ struct ChecklistView: View {
     //stateobject so view is updated on changes
     @StateObject var checkList: ChecklistViewModel
     @Environment(\.editMode) var editMode
+    //for checking if in darkmode
+    @Environment(\.colorScheme) var colourScheme
     //state so title updates in textfield
     @State var title = ""
     
@@ -38,7 +40,7 @@ struct ChecklistView: View {
                             if item.isChecked == true {
                                 Image(systemName: "checkmark")
                             }
-                        }.foregroundColor(Color.black)
+                        }.foregroundColor(colourScheme == .dark ? Color.white : Color.black)
                     }
                 }.onDelete { itemNumbers in
                     checkList.items.remove(atOffsets: itemNumbers)
