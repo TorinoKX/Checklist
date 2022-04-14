@@ -7,7 +7,7 @@
 import Foundation
 
 //this model is currently a class due to issues with loops and structs. My tutor is looking into this issue. For loops can be solved via enumeration but unsure on foreach loops.
-class CheckItemModel: Identifiable {
+struct CheckItemModel: Identifiable {
     var name: String
     var isChecked: Bool
     var oldChecked: Bool

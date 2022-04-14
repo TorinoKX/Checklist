@@ -37,7 +37,7 @@ class ChecklistViewModel: Identifiable, ObservableObject {
     }
     
     //toggles the checked value for an item and tells the view to update
-    func toggleItem(for checkItem: CheckItemModel){
+    func toggleItem(for checkItem: inout CheckItemModel){
         objectWillChange.send()
         checkItem.isChecked.toggle()
     }
@@ -46,15 +46,15 @@ class ChecklistViewModel: Identifiable, ObservableObject {
     func toggleUndo(){
         if undoToggled == false{
             //when the undoToggled value is false it will store the checked value into another variable in the items and set the checked value to false
-            for item in checkList.items {
-                item.oldChecked = item.isChecked
-                item.isChecked = false
+            for i in checkList.items.indices {
+                checkList.items[i].oldChecked = checkList.items[i].isChecked
+                checkList.items[i].isChecked = false
             }
         }else {
             //when the undoToggled value is true it will do the opposite
-            for item in checkList.items {
-                item.isChecked = item.oldChecked
-                item.oldChecked = false
+            for i in checkList.items.indices {
+                checkList.items[i].isChecked = checkList.items[i].oldChecked
+                checkList.items[i].oldChecked = false
             }
         }
         //toggles the value for undoToggled

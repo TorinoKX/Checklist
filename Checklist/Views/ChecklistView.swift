@@ -18,6 +18,7 @@ struct ChecklistView: View {
     @State var title = ""
     
     var body: some View {
+        let withIndex = checkList.items.enumerated().map({ $0 })
         VStack{
             //if the view is in edit mode it will show an editable text field above the list for the checklist title
             if editMode?.wrappedValue == .active {
@@ -30,9 +31,9 @@ struct ChecklistView: View {
                 .padding()
             }
             List{
-                ForEach( checkList.items, id: \.id){ item in
+                ForEach( withIndex, id: \.element.id){ index, item in
                     //each checklist item is a button which will toggle if it is checked or not and reset the undo toggle value
-                    Button(action: {checkList.toggleItem(for: item); checkList.undoToggled=false}){
+                    Button(action: {checkList.toggleItem(for: &checkList.items[index]); checkList.undoToggled=false}){
                         HStack{
                             Text(item.name)
                             Spacer()
@@ -51,7 +52,7 @@ struct ChecklistView: View {
                     HStack {
                         Image(systemName: "plus.circle").foregroundColor(.green)
                         TextField("Enter new entry name", text: $title) {
-                            let newItem = CheckItemModel()
+                            var newItem = CheckItemModel()
                             newItem.name = title
                             checkList.addElement(item: newItem)
                             title = ""
