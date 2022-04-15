@@ -7,13 +7,7 @@
 
 import Foundation
 
-struct ChecklistModel {
-    var items: [CheckItemModel]
-    var name: String
-    
-    //default with empty array and name of "Checklist"
-    init(items: [CheckItemModel] = [], name: String = "Checklist"){
-        self.items = items
-        self.name = name
-    }
+struct ChecklistModel: Codable {
+    var items: [CheckItemModel] = []
+    var name: String = "Checklist"
 }
