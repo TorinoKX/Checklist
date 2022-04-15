@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var masterList: [ChecklistViewModel] = []
+    @Binding var masterList: [ChecklistViewModel]
     var body: some View {
         NavigationView{
             MasterlistView(masterList: $masterList);
