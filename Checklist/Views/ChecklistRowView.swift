@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ChecklistRowView: View {
     @ObservedObject var checkList: ChecklistViewModel
-    @Binding var masterList: [ChecklistViewModel]
+    var onChanged: () -> Void
     var body: some View {
         //Nav link showing name of checklist which takes you to detail view for the checklist
-        NavigationLink(checkList.name, destination: ChecklistView(checkList: checkList, masterList: $masterList))
+        NavigationLink(checkList.name, destination: ChecklistView(checkList: checkList, onChanged: onChanged))
     }
 }

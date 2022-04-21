@@ -12,11 +12,11 @@ struct ChecklistView: View {
     //stateobject so view is updated on changes
     @StateObject var checkList: ChecklistViewModel
     @Environment(\.editMode) var editMode
-    @Binding var masterList: [ChecklistViewModel]
     //for checking if in darkmode
     @Environment(\.colorScheme) var colourScheme
     //state so title updates in textfield
     @State var title = ""
+    var onChanged: () -> Void
     
     var body: some View {
         let withIndex = checkList.items.enumerated().map({ $0 })
@@ -26,7 +26,7 @@ struct ChecklistView: View {
                 HStack {
                     Image(systemName: "pencil.circle").foregroundColor(.green)
                     TextField(checkList.name, text: $checkList.name, onCommit: {
-                        ChecklistApp.save(masterList: masterList)
+                        onChanged()
                     })
                         .font(Font.largeTitle.weight(.bold))
                         
@@ -39,7 +39,8 @@ struct ChecklistView: View {
                     Button(action: {
                         checkList.toggleItem(for: &checkList.items[index])
                         checkList.undoToggled=false
-                        ChecklistApp.save(masterList: masterList)
+                        onChanged()
+                        
                     }){
                         HStack{
                             Text(item.name)
@@ -52,11 +53,11 @@ struct ChecklistView: View {
                     }
                 }.onDelete { itemNumbers in
                     checkList.items.remove(atOffsets: itemNumbers)
-                    ChecklistApp.save(masterList: masterList)
+                    onChanged()
                 }
                 .onMove {
                     checkList.move(from: $0, to: $1)
-                    ChecklistApp.save(masterList: masterList)
+                    onChanged()
                 }
                 //if view is in edit mode, show a text entry field at the bottom of the list to create a new checklist item
                 if editMode?.wrappedValue == .active {
@@ -67,7 +68,7 @@ struct ChecklistView: View {
                             newItem.name = title
                             checkList.addElement(item: newItem)
                             title = ""
-                            ChecklistApp.save(masterList: masterList)
+                            onChanged()
                         }
                     }
                 }
@@ -78,7 +79,7 @@ struct ChecklistView: View {
                 //Button to call the toggleUndo function of checkList, if the view is in edit mode it will show either "Undo Reset" or "Reset" depending on undoToggled value, otherwise will have no text. Colour also changes
                 Button(action: {
                     checkList.toggleUndo()
-                    ChecklistApp.save(masterList: masterList)
+                    onChanged()
                 }) {
                     Text(editMode?.wrappedValue == .active ? checkList.undoToggled == true ? "Undo Reset" : "Reset" : "")
                 }.foregroundColor(checkList.undoToggled == true ? Color.red : Color.green)

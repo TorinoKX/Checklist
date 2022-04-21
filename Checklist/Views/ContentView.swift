@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
-    @Binding var masterList: [ChecklistViewModel]
+    @ObservedObject var masterList: MasterlistViewModel = MasterlistViewModel()
     var body: some View {
-        NavigationView{
-            MasterlistView(masterList: $masterList);
+        if masterList.isLoading {
+            ProgressView()
+                .progressViewStyle(CircularProgressViewStyle())
+        }
+        else{
+            NavigationView{
+                MasterlistView(masterList: masterList);
+            }
         }
     }
 }
-
