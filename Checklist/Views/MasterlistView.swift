@@ -16,18 +16,12 @@ struct MasterlistView: View {
                 ChecklistRowView(checkList: item, onChanged: onChanged)
             }.onDelete { itemNumbers in
                 masterList.masterList.remove(atOffsets: itemNumbers)
-                masterList.save()
+                onChanged()
             }
             .onMove(perform: move)
         }
         .navigationTitle("Checklists")
-        .navigationBarItems(leading: EditButton(),trailing: Button(action: {
-            //append a blank checklist to the masterlist array with default name of "Checklist"
-            masterList.masterList.append(ChecklistViewModel(checkList: ChecklistModel()))
-            masterList.save()
-        }) {
-            Image(systemName: "plus")
-        })
+        .navigationBarItems(leading: EditButton(),trailing: AddButtonView(masterList: masterList, onChanged: onChanged))
     }
     
     func onChanged() {
@@ -36,7 +30,6 @@ struct MasterlistView: View {
     
     func move(from source: IndexSet, to destination: Int) {
         masterList.masterList.move(fromOffsets: source, toOffset: destination)
-        masterList.save()
-        
+        onChanged()
     }
 }
