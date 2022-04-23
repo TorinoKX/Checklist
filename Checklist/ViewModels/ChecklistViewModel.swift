@@ -61,6 +61,7 @@ class ChecklistViewModel: Identifiable, ObservableObject {
         undoToggled.toggle()
     }
     
+    //for moving the items in a list
     func move(from source: IndexSet, to destination: Int) {
             items.move(fromOffsets: source, toOffset: destination)
         }

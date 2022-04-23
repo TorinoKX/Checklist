@@ -8,22 +8,25 @@
 import Foundation
 
 class MasterlistViewModel: ObservableObject {
-    @Published var masterList: [ChecklistViewModel] = []
+    @Published var items: [ChecklistViewModel] = []
     @Published var isLoading: Bool = false
+    //When a MasterlistViewModel is initialised it will run the load function to load the data
     init() {
         load()
     }
     
+    //Converts the array of ChecklistViewModel into an array of ChecklistModel before passing into the save function in the checklistService
     func save() {
         isLoading = true
         var model: [ChecklistModel] = []
-        for i in masterList.indices {
-            model.append(masterList[i].checkList)
+        for i in items.indices {
+            model.append(items[i].checkList)
         }
         ChecklistApp.checklistService.save(checklists: model)
         isLoading = false
     }
-    
+
+    //loads the JSON data, converts from ChecklistModel to ChecklistViewModel then sets the items variable to the converted data
     func load() {
         isLoading = true
         let data = ChecklistApp.checklistService.loadData()
@@ -31,7 +34,13 @@ class MasterlistViewModel: ObservableObject {
         for i in data.indices {
             checklists.append(ChecklistViewModel(checkList: data[i]))
         }
-        masterList = checklists
+        items = checklists
         isLoading = false
+    }
+    
+    //for moving in a list, then saves
+    func move(from source: IndexSet, to destination: Int) {
+        items.move(fromOffsets: source, toOffset: destination)
+        save()
     }
 }

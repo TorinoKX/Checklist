@@ -13,7 +13,7 @@ struct AddButtonView: View {
     var body: some View {
         Button(action: {
             //append a blank checklist to the masterlist array with default name of "Checklist"
-            masterList.masterList.append(ChecklistViewModel(checkList: ChecklistModel()))
+            masterList.items.append(ChecklistViewModel(checkList: ChecklistModel()))
             onChanged()
         }) {
             Image(systemName: "plus")

@@ -8,6 +8,7 @@
 import Foundation
 
 class ChecklistService {
+    //funciton to load the data from the JSON file as an array of ChecklistModel's
     func loadData() -> [ChecklistModel] {
         guard let data  = try? Data(contentsOf: fileURL),
               let model = try? JSONDecoder().decode([ChecklistModel].self, from: data) else {
@@ -16,6 +17,7 @@ class ChecklistService {
         return model
     }
         
+    //Supplies the fileURL for the JSON data
     var fileURL: URL {
         let fileName = "checklists.json"
         let fm = FileManager.default
@@ -25,6 +27,7 @@ class ChecklistService {
         return fileURL
     }
 
+    //saves an array of ChecklistModel's to the JSON file
     func save(checklists: [ChecklistModel]) {
         do {
             let data = try JSONEncoder().encode(checklists)
