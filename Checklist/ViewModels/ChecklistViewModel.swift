@@ -7,7 +7,11 @@
 import Foundation
 import SwiftUI
 
-class ChecklistViewModel: Identifiable, ObservableObject {
+class ChecklistViewModel: Identifiable, ObservableObject, Equatable {
+    static func == (lhs: ChecklistViewModel, rhs: ChecklistViewModel) -> Bool {
+        lhs.checkList == rhs.checkList
+    }
+    
     //Published so changes to the checklist and undoToggled value are observed
     @Published var checkList: ChecklistModel
     @Published var undoToggled = false
@@ -22,7 +26,7 @@ class ChecklistViewModel: Identifiable, ObservableObject {
         set { checkList.name = newValue }
     }
     
-    init(checkList: ChecklistModel){
+    init(checkList: ChecklistModel = ChecklistModel()){
         self.checkList = checkList
     }
     

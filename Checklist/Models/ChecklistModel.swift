@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ChecklistModel: Codable {
+struct ChecklistModel: Codable, Equatable {
     //an array of items and a name
     var items: [CheckItemModel]
     var name: String

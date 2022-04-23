@@ -8,10 +8,11 @@
 import Foundation
 
 class MasterlistViewModel: ObservableObject {
-    @Published var items: [ChecklistViewModel] = []
+    @Published var items: [ChecklistViewModel]
     @Published var isLoading: Bool = false
     //When a MasterlistViewModel is initialised it will run the load function to load the data
-    init() {
+    init(items: [ChecklistViewModel] = []) {
+        self.items = items
         load()
     }
     
