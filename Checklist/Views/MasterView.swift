@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/**
+ Displays a list, calling the ChecklistRowView with each item in the masterList passed in, as well as the onChanged function declared in this view. Also handles deletion, moving, and adding items. Has default navigation title of "Checklists". The add button is done via AddButtonView.
+ */
 struct MasterView: View {
     //Observed object of masterList passed in from ContentView
     @ObservedObject var masterList: MasterlistViewModel
@@ -26,7 +29,9 @@ struct MasterView: View {
         .navigationBarItems(leading: EditButton(),trailing: AddButtonView(masterList: masterList, onChanged: onChanged))
     }
     
-    //Created as a function to be passed down to other views, alternative was to pass the masterList all the way down
+    /**
+     Calls the save function for the masterList variable of MasterView. Exists to be passed down to other views for saving the masterList.
+     */
     func onChanged() {
         masterList.save()
     }

@@ -7,6 +7,9 @@
 import Foundation
 import SwiftUI
 
+/**
+ A viewmodel for storing a ChecklistModel and a variable for checking if the undo button has been pressed. Includes functions for adding, removing, and moving items, and functionality for the undo button.
+ */
 class ChecklistViewModel: Identifiable, ObservableObject, Equatable {
     static func == (lhs: ChecklistViewModel, rhs: ChecklistViewModel) -> Bool {
         lhs.checkList == rhs.checkList
@@ -14,6 +17,7 @@ class ChecklistViewModel: Identifiable, ObservableObject, Equatable {
     
     //Published so changes to the checklist and undoToggled value are observed
     @Published var checkList: ChecklistModel
+    //True if the undo button has been pressed, false if not or if it is undone
     @Published var undoToggled = false
     var id = UUID()
     //For shorthand calling for items and name in view
@@ -30,23 +34,34 @@ class ChecklistViewModel: Identifiable, ObservableObject, Equatable {
         self.checkList = checkList
     }
     
-    //appends an item to the array
+    /**
+     Adds an item to the checklist
+     
+     - Parameter item: A Check Item to be added to the checklist
+     - Returns: Nothing
+     */
     func addElement(item: CheckItemModel) {
         checkList.items.append(item)
     }
     
-    //removes an item from the array
+    /**
+     Removes an item from the checklist
+     
+     - Parameter atOffsets: Index of the item to be removed
+     - Returns: Nothing
+     */
     func remove(atOffsets indices: IndexSet) {
         checkList.items.remove(atOffsets: indices)
     }
     
-    //toggles the checked value for an item and tells the view to update
-    func toggleItem(for checkItem: inout CheckItemModel){
-        objectWillChange.send()
-        checkItem.isChecked.toggle()
-    }
-    
-    //called when the reset and undo buttons are pressed
+    /**
+     Will check if the Undo button has been pressed.
+     If it has not, each item in the checklist will have their isChecked value stored in oldChecked before setting isChecked to false.
+     If it has, the oldChecked value is stored in isChecked and oldChecked is set to false.
+     It will then toggle the undoToggled value for the checklist.
+     
+     - Returns: Nothing
+     */
     func toggleUndo(){
         if undoToggled == false{
             //when the undoToggled value is false it will store the checked value into another variable in the items and set the checked value to false
@@ -65,7 +80,14 @@ class ChecklistViewModel: Identifiable, ObservableObject, Equatable {
         undoToggled.toggle()
     }
     
-    //for moving the items in a list
+    /**
+     Moves an item in the checklist
+     
+     - Parameters:
+        - from: The index the item was originally located
+        - to: The index the item is being moved to
+     - Returns: Nothing
+     */
     func move(from source: IndexSet, to destination: Int) {
             items.move(fromOffsets: source, toOffset: destination)
         }

@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/**
+ Lists each item via CheckItemRowView with index, item, checkList, and onChanged passed in. Also allows removal and moving of items.
+ */
 struct CheckItemListView: View {
     @StateObject var checkList: ChecklistViewModel
     //for checking if in darkmode

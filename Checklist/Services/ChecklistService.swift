@@ -7,8 +7,15 @@
 
 import Foundation
 
+/**
+ A service file for handling loading and saving data to a JSON file.
+ */
 class ChecklistService {
-    //funciton to load the data from the JSON file as an array of ChecklistModel's
+    /**
+     Loads the data from the fileURL before returning the data. If unable to load, returns an empty array.
+     
+     - Returns: An array of ChecklistModel's
+     */
     func loadData() -> [ChecklistModel] {
         guard let data  = try? Data(contentsOf: fileURL),
               let model = try? JSONDecoder().decode([ChecklistModel].self, from: data) else {
@@ -17,7 +24,9 @@ class ChecklistService {
         return model
     }
         
-    //Supplies the fileURL for the JSON data
+    /**
+     Has filename of "checklists.json" appended to the document directory of the app.
+     */
     var fileURL: URL {
         let fileName = "checklists.json"
         let fm = FileManager.default
@@ -27,7 +36,11 @@ class ChecklistService {
         return fileURL
     }
 
-    //saves an array of ChecklistModel's to the JSON file
+    /**
+     Saves an array of ChecklistModel's to the fileURL.
+     
+     - Parameter checklists: An array of ChecklistModel's
+     */
     func save(checklists: [ChecklistModel]) {
         do {
             let data = try JSONEncoder().encode(checklists)

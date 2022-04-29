@@ -7,6 +7,9 @@
 
 import Foundation
 
+/**
+ A checklist (array of items) with a name.
+ */
 struct ChecklistModel: Codable, Equatable {
     //an array of items and a name
     var items: [CheckItemModel]

@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/**
+ Declares masterList variable for use with the progressView. Will show the progressView if the data in masterList is still loading, otherwise will load MasterView in a NavigationView with masterList passed into masterList.
+ */
 struct ContentView: View {
     //Variable declared in ContentView to allow for toggling of ProgressView
     @ObservedObject var masterList: MasterlistViewModel = MasterlistViewModel()

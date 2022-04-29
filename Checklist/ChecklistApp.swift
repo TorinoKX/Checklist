@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/**
+ Declares a static variable which references ChecklistService and loads ContentView
+*/
 @main
 struct ChecklistApp: App {
     //Reference to the ChecklistService for use throughout the views

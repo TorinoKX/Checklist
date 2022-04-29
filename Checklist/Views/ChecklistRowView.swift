@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/**
+ Displays a navigation link with the name of the checklist it's listing. Passes the checklist into a DetailView with the onChanged function from MasterView when pressed.
+ */
 struct ChecklistRowView: View {
     //Observed variable for checklist, for display of the name and linking to the detail view
     @ObservedObject var checkList: ChecklistViewModel

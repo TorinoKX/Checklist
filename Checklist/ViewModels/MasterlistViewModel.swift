@@ -7,6 +7,9 @@
 
 import Foundation
 
+/**
+ A viewmodel for storing an array of ChecklistViewModel's and a variable to check if the JSON data is loading on load or save. Includes functions for saving and loading data, and moving items in the array.
+ */
 class MasterlistViewModel: ObservableObject {
     @Published var items: [ChecklistViewModel]
     @Published var isLoading: Bool = false
@@ -16,7 +19,11 @@ class MasterlistViewModel: ObservableObject {
         load()
     }
     
-    //Converts the array of ChecklistViewModel into an array of ChecklistModel before passing into the save function in the checklistService
+    /**
+     Sets isLoading to true. Stores the checkList variable for each item in the items array in an array  titled model. Then passes that variable into 'ChecklistApp.checklistService.save'. isLoading then set to false.
+     
+     - Returns: Nothing
+     */
     func save() {
         isLoading = true
         var model: [ChecklistModel] = []
@@ -27,7 +34,11 @@ class MasterlistViewModel: ObservableObject {
         isLoading = false
     }
 
-    //loads the JSON data, converts from ChecklistModel to ChecklistViewModel then sets the items variable to the converted data
+    /**
+     Sets isLoading to true. 'data' constant declared with value returned from 'ChecklistApp.checklistService.loadData'. Stores data into 'checklists' array where each item is a ChecklistViewModel by setting the checkList variable to an entry in 'data'. Sets the 'items' variable in MasterlistViewModel to 'checklists'. isLoading then set to false.
+     
+     - Returns: Nothing
+     */
     func load() {
         isLoading = true
         let data = ChecklistApp.checklistService.loadData()
@@ -39,7 +50,14 @@ class MasterlistViewModel: ObservableObject {
         isLoading = false
     }
     
-    //for moving in a list, then saves
+     /**
+      Moves an item in the checklist. Then calls save function.
+      
+      - Parameters:
+         - from: The index the item was originally located
+         - to: The index the item is being moved to
+      - Returns: Nothing
+      */
     func move(from source: IndexSet, to destination: Int) {
         items.move(fromOffsets: source, toOffset: destination)
         save()

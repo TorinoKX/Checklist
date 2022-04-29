@@ -8,6 +8,9 @@
 import SwiftUI
 import Foundation
 
+/**
+ Shows a list of checklist items with the name of the checklist at the top, each item can be checked/unchecked via tapping. If the view is in edit mode it allows editing of checklist name and addition of items via text fields. Also has a reset/undo reset button while in edit mode for unticking all items and undoing the unticking. Saves the data via the onChanged function from MasterView.
+ */
 struct DetailView: View {
     //stateobject so view is updated on changes
     @StateObject var checkList: ChecklistViewModel

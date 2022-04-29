@@ -6,6 +6,9 @@
 //
 import Foundation
 
+/**
+ An item for use in a checklist.
+ */
 struct CheckItemModel: Identifiable, Codable, Equatable {
     //Name of an item, a variable to check if the item is checked and a variable to show the previous value upon resetting checks
     var name: String

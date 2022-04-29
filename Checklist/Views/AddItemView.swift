@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/**
+ A plus in a circle icon next to a text field for adding items to the checklist.
+ */
 struct AddItemView: View {
     @State var title = ""
     @StateObject var checkList: ChecklistViewModel

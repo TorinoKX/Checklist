@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/**
+ Displays a button with the name of the item. Also has functionality for checking the items. Includes colorScheme to correct the text colour as the blue colour of the buttons does not look nice.
+ */
 struct CheckItemRowView: View {
     var index: Int
     var item: CheckItemModel
@@ -16,7 +19,7 @@ struct CheckItemRowView: View {
     var body: some View {
         Button(action: {
             //Toggles the isChecked value, sets the undoToggled value to false so you can no longer reset the ticks if you tick an item after undoing the ticks. It then saves the data
-            checkList.toggleItem(for: &checkList.items[index])
+            checkList.items[index].isChecked.toggle()
             checkList.undoToggled=false
             onChanged()
         }){

@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/**
+ A simple button with a plus symbol. Appends ChecklistViewModel with the checkList being a ChecklistModel with default initialisation to the masterList. Also calls the onChanged function from masterList.
+ */
 struct AddButtonView: View {
     var masterList: MasterlistViewModel
     var onChanged: () -> Void
