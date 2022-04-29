@@ -14,7 +14,7 @@ class MasterlistViewModel: ObservableObject {
     @Published var items: [ChecklistViewModel]
     @Published var isLoading: Bool = false
     //When a MasterlistViewModel is initialised it will run the load function to load the data
-    init(items: [ChecklistViewModel] = []) {
+    init(items: [ChecklistViewModel] = [ChecklistViewModel()]) {
         self.items = items
         load()
     }

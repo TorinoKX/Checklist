@@ -23,6 +23,7 @@ struct ContentView: View {
         else{
             NavigationView{
                 MasterView(masterList: masterList);
+                DetailView(checkList: masterList.items[0], onChanged: masterList.save)
             }
         }
     }
