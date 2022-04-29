@@ -18,6 +18,7 @@ class ChecklistTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
+    //Testing for CheckItemModel
     func testCheckItemModel() throws {
         let item: CheckItemModel = CheckItemModel(name: "", isChecked: false, oldChecked: false)
         var item2: CheckItemModel = CheckItemModel()
@@ -38,6 +39,7 @@ class ChecklistTests: XCTestCase {
         XCTAssert(item2.oldChecked == t)
     }
     
+    //Tests for ChecklistModel
     func testChecklistModel() throws {
         let checkList: ChecklistModel = ChecklistModel(items: [], name: "Checklist")
         var checkList2: ChecklistModel = ChecklistModel()
@@ -55,6 +57,7 @@ class ChecklistTests: XCTestCase {
         XCTAssert(checkList2.name == name)
     }
     
+    //Tests for ChecklistViewModel
     func testChecklistViewModel() throws {
         let checkList: ChecklistViewModel = ChecklistViewModel()
         let checkList2: ChecklistViewModel = ChecklistViewModel(checkList: ChecklistModel())
@@ -96,6 +99,7 @@ class ChecklistTests: XCTestCase {
         }
     }
     
+    //Tests for MasterlistViewModel
     func testMasterlistViewModel() throws {
         let masterList: MasterlistViewModel = MasterlistViewModel(items: [])
         let masterList2: MasterlistViewModel = MasterlistViewModel()
@@ -109,6 +113,24 @@ class ChecklistTests: XCTestCase {
         masterList2.items = items
         XCTAssert(masterList2.items == items)
     }
+    
+    //Testing of functions from ChecklistService. Unable to test via calls to ChecklistService due to 
+    func testJSONSerialisation() throws {
+        let checklistService: ChecklistService = ChecklistService(fileName: "test.JSON")
+        let testData: [ChecklistModel] = [ChecklistModel()]
+        
+        //Deletes the test file before testing.
+        checklistService.delete()
+        
+        //Test default load value if file doesn't exist.
+        let defaultLoad = checklistService.loadData()
+        XCTAssert(defaultLoad == [])
+        
+        //Test saving and loading data
+        checklistService.save(checklists: testData)
+        let changedLoad = checklistService.loadData()
+        XCTAssert(changedLoad == testData)
+    }
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
@@ -116,5 +138,4 @@ class ChecklistTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
 }

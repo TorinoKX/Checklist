@@ -11,6 +11,11 @@ import Foundation
  A service file for handling loading and saving data to a JSON file.
  */
 class ChecklistService {
+    var fileName: String;
+    
+    init(fileName: String = "checklists.json") {
+        self.fileName = fileName
+    }
     /**
      Loads the data from the fileURL before returning the data. If unable to load, returns an empty array.
      
@@ -28,11 +33,10 @@ class ChecklistService {
      Has filename of "checklists.json" appended to the document directory of the app.
      */
     var fileURL: URL {
-        let fileName = "checklists.json"
         let fm = FileManager.default
         guard let documentDir = fm.urls(for: .documentDirectory, in: .userDomainMask).first else { return URL(fileURLWithPath: "/") }
         print(documentDir)
-        let fileURL = documentDir.appendingPathComponent(fileName)
+        let fileURL = documentDir.appendingPathComponent(self.fileName)
         return fileURL
     }
 
@@ -40,6 +44,7 @@ class ChecklistService {
      Saves an array of ChecklistModel's to the fileURL.
      
      - Parameter checklists: An array of ChecklistModel's
+     - Returns: Nothing
      */
     func save(checklists: [ChecklistModel]) {
         do {
@@ -49,6 +54,22 @@ class ChecklistService {
             print(dataString)
         } catch {
             print("Could not write file: \(error)")
+        }
+    }
+    
+    /**
+     For deleting the saved file. Only used for testing.
+     
+     - Returns: Nothing
+     */
+    func delete() {
+        let fileManager = FileManager.default
+        if fileManager.fileExists(atPath: fileURL.path) {
+            do {
+                try fileManager.removeItem(atPath: fileURL.path)
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
         }
     }
 }
