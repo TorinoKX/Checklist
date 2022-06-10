@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "68574611-B9EA-4037-AFE6-DEA72E8E7345"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9618BD7C-9DFB-4852-89EC-BF1E703141A9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Checklist/Views/ChecklistView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6FCE5271-C9BF-4D44-BABD-ED160ABA7C1E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Checklist/ViewModels/ChecklistViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "init(checkList:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7AEF5D69-3936-45A0-B1FE-8633CD37772C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Checklist/ViewModels/CheckItemViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "CheckItemViewModel"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "7AEF5D69-3936-45A0-B1FE-8633CD37772C - bd18518976105ff6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of Checklist.CheckItemViewModel.CheckItem : Checklist.CheckItemModel"
+                  moduleName = "Checklist"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zak/Library/Mobile%20Documents/com~apple~CloudDocs/3701ICT/Checklist/Checklist/ViewModels/CheckItemViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "7AEF5D69-3936-45A0-B1FE-8633CD37772C - 350aff286046ce73"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Checklist.CheckItemViewModel.CheckItem.getter : Checklist.CheckItemModel"
+                  moduleName = "Checklist"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zak/Library/Mobile%20Documents/com~apple~CloudDocs/3701ICT/Checklist/Checklist/ViewModels/CheckItemViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  uuid = "7AEF5D69-3936-45A0-B1FE-8633CD37772C - 56843e6839057987"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Checklist.CheckItemViewModel.CheckItem.setter : Checklist.CheckItemModel"
+                  moduleName = "Checklist"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zak/Library/Mobile%20Documents/com~apple~CloudDocs/3701ICT/Checklist/Checklist/ViewModels/CheckItemViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "126">
+               </Location>
+               <Location
+                  uuid = "7AEF5D69-3936-45A0-B1FE-8633CD37772C - 1d94b7fb6b48ecc3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Checklist.CheckItemViewModel.CheckItem.modify : Checklist.CheckItemModel with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Checklist"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zak/Library/Mobile%20Documents/com~apple~CloudDocs/3701ICT/Checklist/Checklist/ViewModels/CheckItemViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "7AEF5D69-3936-45A0-B1FE-8633CD37772C - c30aeb92c3baee93"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Checklist.CheckItemViewModel.$CheckItem.getter : Combine.Published&lt;Checklist.CheckItemModel&gt;.Publisher"
+                  moduleName = "Checklist"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zak/Library/Mobile%20Documents/com~apple~CloudDocs/3701ICT/Checklist/Checklist/ViewModels/CheckItemViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "94">
+               </Location>
+               <Location
+                  uuid = "7AEF5D69-3936-45A0-B1FE-8633CD37772C - 81cccd44d095aba7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Checklist.CheckItemViewModel.$CheckItem.setter : Combine.Published&lt;Checklist.CheckItemModel&gt;.Publisher"
+                  moduleName = "Checklist"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zak/Library/Mobile%20Documents/com~apple~CloudDocs/3701ICT/Checklist/Checklist/ViewModels/CheckItemViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "180">
+               </Location>
+               <Location
+                  uuid = "7AEF5D69-3936-45A0-B1FE-8633CD37772C - 20d468632549d929"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Checklist.CheckItemViewModel.$CheckItem.modify : Combine.Published&lt;Checklist.CheckItemModel&gt;.Publisher with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Checklist"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zak/Library/Mobile%20Documents/com~apple~CloudDocs/3701ICT/Checklist/Checklist/ViewModels/CheckItemViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
